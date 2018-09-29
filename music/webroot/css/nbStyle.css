@@ -1,0 +1,223 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+body {
+    background-image: url("../img/bg.jpg") !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+h1,h3 {
+    margin: 0px;
+    cursor: context-menu;
+}
+
+p {
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a, a:hover, a:focus {
+    color: inherit !important;
+    text-decoration: none;
+}
+
+.navbar {
+    height: 15vh;
+    padding: 20px 10px 0px 10px;
+    border: none;
+    background: rgba(0,0,0,0.7) !important;
+    border-radius: 0;
+    margin: 0px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+#logout {
+    margin-right: 20px;
+    margin-top: -60px;
+    text-align: right;
+    color: white;
+}
+
+.wrapper {
+	display: flex;
+    perspective: 1500px; /* Define how many pixels the sidebar is placed from the view. */
+}
+
+#sidebar {
+	width: 250px;
+	position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100vh;
+    z-index: 999;
+    background: #202020;
+    color: #fff;
+    transition: all 0.3s;
+    overflow-y: scroll;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+#sidebar.active {
+    left: 0;
+}
+
+#sidebar .sidebar-header {
+    padding: 19.5px;
+    background: black;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #000;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: #000 !important;
+    background: #fff;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #F05F40;
+}
+
+#myLogo {
+    height: 100px;
+    width: 100px;
+    margin-left: 10%;
+}
+
+.overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+    display: none;
+}
+
+#sidebarCollapse {
+    width: 40px;
+    height: 40px;
+    background:#fff;
+}
+
+#sidebarCollapse span {
+    width: 80%;
+    height: 2px;
+    margin: 0 auto;
+    display: block;
+    background:#555;
+    transition: all 0.4s cubic-bezier(0.810,-0.330,0.345,1.375);
+}
+
+#sidebarCollapse span:first-of-type {
+    /* rotate first one */
+    transform: rotate(45deg) translate(2px, 2px);
+}
+#sidebarCollapse span:nth-of-type(2) {
+    /* second one is not visible */
+    opacity: 0;
+}
+#sidebarCollapse span:last-of-type {
+    /* rotate third one */
+    transform: rotate(-45deg) translate(1px, -1px);
+}
+
+#sidebarCollapse.active span {
+    /* no rotation */
+    transform: none;
+    /* all bars are visible */
+    opacity: 1;
+    margin: 5px auto;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+a[aria-expanded="false"]::before,a[aria-expanded="true"]::before {
+    content: '\e259';
+    display: block;
+    position: absolute;
+    right: 20px;
+    font-family: 'Glyphicons Halflings';
+    font-size: 0.6em;
+}
+
+a[aria-expanded="true"]::before {
+    content: '\e260';
+}
+
+ul li a {
+    color: #fff;
+}
+
+ul ul a {
+    color: #000 !important;
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #808080;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+
+
+#myTitle {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 30px;
+    color: #F05F40 !important;
+    padding-top: 10px;
+    cursor: context-menu;
+}
+
+#content {
+    width:100%;
+    height:85vh;
+    position: absolute;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#tabContents {
+    width: 100%;
+    height:100%;
+    overflow: auto;
+    background: rgba(255,255,255,0.8);
+}
+
+#tabContents p , #tabContents h1 , #tabContents h2 , #tabContents h3 , #tabContents h4{
+    text-align: center;
+    line-height: 80px;
+    color: #000;
+}
